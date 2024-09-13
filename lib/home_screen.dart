@@ -1,6 +1,6 @@
+import 'package:amvali3dviewer/web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_titled_container/flutter_titled_container.dart';
-import 'ver_modelo.dart'; // Make sure you have this file with WebViewScreen defined.
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,48 +17,44 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontSize: 37),
         ),
         centerTitle: true,
+
       ),
       body: GridView.count(
         crossAxisCount: 2,
-        children: List.generate(100, (index) {
+        children: List.generate(4, (index) {
           return Center(
-            child: TitledContainer(
-              title: 'Projeto $index',
-              textAlign: TextAlignTitledContainer.Center, // Corrected to TextAlign.center
-              backgroundColor: Colors.white,
-              fontSize: 20.0,
-                child: Column(
-                  children: [
+              child: TitledContainer(
+                title: 'Projeto $index',
+                textAlign: TextAlignTitledContainer.Center,
+                // Corrected to TextAlign.center
+                backgroundColor: Colors.transparent,
+                fontSize: 20.0,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(children: [
                     const SizedBox(height: 15),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => WebViewScreen()),
-                        );
-                      },
-                      child: Container(
-                        width: 185,
-                        height: 140,
-                        decoration: BoxDecoration(
-                          color: Colors.cyan,
-                          borderRadius: BorderRadius.circular(18),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: Colors.grey,
-                              spreadRadius: 0.1, // Adjusted value for visibility
-                              blurRadius: 5,
-                              offset: Offset(2, 3),
-                            ),
-                          ],
-                        ),
+                    Container(
+                      width: 185,
+                      height: 130,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(18),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            spreadRadius: 0.1,
+                            // Adjusted value for visibility
+                            blurRadius: 5,
+                            offset: Offset(2, 3),
+                          ),
+                        ],
                       ),
+                      child: const WebView(),
                     ),
-                  ],
+                  ]),
                 ),
               ),
-            );
-
+          );
         }),
       ),
     );
