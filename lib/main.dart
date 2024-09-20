@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: WebView(),
+      home: Login(),
       debugShowCheckedModeBanner: false,
       title: 'Amvali 3D Viewer',
       // theme: TextTheme(
