@@ -1,5 +1,4 @@
 import 'package:amvali3dviewer/login.dart';
-import 'package:amvali3dviewer/web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -20,10 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Amvali 3D Viewer',
       // theme: TextTheme(
-        // bodyLarge: TextStyle(fontStyle: ) // tentativa de adicionar as fontes da amvali
+      // bodyLarge: TextStyle(fontStyle: ) // tentativa de adicionar as fontes da amvali
       // ),
-
     );
   }
 }
-

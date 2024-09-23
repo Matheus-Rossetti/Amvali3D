@@ -37,6 +37,8 @@ dependencies:
   flutter_native_splash: ^2.4.1
   path_provider: ^2.0.7
   js: ^0.6.7
+  hexcolor: ^3.0.1
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -55,10 +57,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/www/working_proof/
-    - assets/www/speckle_viewer/
-    - assets/www/node_modules/
-    - assets/www/
+    - assets/images/login_logo.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
