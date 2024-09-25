@@ -107,10 +107,11 @@ class Login extends StatelessWidget {
                 ],
               ),
             ),
-            ElevatedButton(onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Login2()));
-            },
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Login2()));
+                },
                 child: Text('Login2')),
             SizedBox(height: 170)
           ]),

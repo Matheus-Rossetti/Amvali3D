@@ -1,12 +1,17 @@
-import 'package:amvali3dviewer/backend.dart';
+import 'package:amvali3dviewer/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'backend.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
+import 'firebase/auth.dart';
 
 class Login2 extends StatelessWidget {
-  const Login2({super.key});
+  Login2({super.key});
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +40,6 @@ class Login2 extends StatelessWidget {
                     child: Text(
                       'Login',
                       style: GoogleFonts.poppins(
-                          // alterar para uma custom font
                           textStyle: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -87,6 +91,7 @@ class Login2 extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(9, 2, 0, 0),
                               child: TextFormField(
+                                  controller: emailController,
                                   decoration: const InputDecoration(
                                       hintText: 'Usuário: ',
                                       border: InputBorder.none),
@@ -106,6 +111,7 @@ class Login2 extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(10, 4, 0, 0),
                               child: TextFormField(
+                                  controller: passwordController,
                                   obscureText: true,
                                   decoration: const InputDecoration(
                                       hintText: 'Senha: ',
@@ -139,7 +145,21 @@ class Login2 extends StatelessWidget {
                               color: HexColor('#007c3d'),
                               borderRadius: BorderRadius.circular(4)),
                           child: TextButton(
-                              onPressed: null,
+                              onPressed: () async {
+                                final message = await AuthService().login(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                );
+                                if (message!.contains('Success')) {
+                                  Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(builder: (context) => const HomeScreen()));
+                                }
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(message),
+                                  ),
+                                );
+                              },
                               child: Text(
                                 "Entrar",
                                 style: TextStyle(

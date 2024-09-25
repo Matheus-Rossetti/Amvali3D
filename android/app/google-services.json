@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776449922263",
+    "project_id": "pac-2024-2",
+    "storage_bucket": "pac-2024-2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776449922263:android:003695bd11df0a6f964c92",
+        "android_client_info": {
+          "package_name": "Amv3D.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFYUgZRUcWDVTylyEhnTxVjibMCIHZh40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
