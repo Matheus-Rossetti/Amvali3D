@@ -7,19 +7,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text(
-          'Projetos',
-          style: TextStyle(fontSize: 37),
-        ),
-        centerTitle: true,
-      ),
       body: GridView.count(
         crossAxisCount: 2,
-        children: List.generate(4, (index) {
+        children: List.generate(10, (index) {
           return Center(
             child: TitledContainer(
               title: 'Projeto $index',
