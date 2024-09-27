@@ -136,9 +136,6 @@ class Login extends StatelessWidget {
                               borderRadius: BorderRadius.circular(4)),
                           child: TextButton(
                               onPressed: () async {
-                                print(emailController);
-                                print(passwordController);
-                                print("aaaaaa");
                                 final message = await AuthService().login(
                                   email: emailController.text,
                                   password: passwordController.text,
