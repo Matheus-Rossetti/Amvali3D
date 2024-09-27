@@ -1,4 +1,4 @@
-import 'package:amvali3dviewer/home_screen.dart';
+import 'package:amvali3dviewer/navbar_screens/projects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,11 +6,11 @@ import 'package:hexcolor/hexcolor.dart';
 
 import 'firebase/auth.dart';
 
+final TextEditingController emailController = TextEditingController();
+final TextEditingController passwordController = TextEditingController();
+
 class Login extends StatelessWidget {
   Login({super.key});
-
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -136,6 +136,9 @@ class Login extends StatelessWidget {
                               borderRadius: BorderRadius.circular(4)),
                           child: TextButton(
                               onPressed: () async {
+                                print(emailController);
+                                print(passwordController);
+                                print("aaaaaa");
                                 final message = await AuthService().login(
                                   email: emailController.text,
                                   password: passwordController.text,
@@ -144,7 +147,7 @@ class Login extends StatelessWidget {
                                   Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const HomeScreen()));
+                                              const ProjectsScreen()));
                                 }
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -173,7 +176,7 @@ class Login extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const HomeScreen()));
+                                            const ProjectsScreen()));
                               },
                               child: Text(
                                 "Entrar como convidado",
@@ -282,8 +285,6 @@ class Password extends StatefulWidget {
 class _PasswordState extends State<Password> {
   bool _isChecked = false;
   bool _seePassword = false;
-  final TextEditingController passwordController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -306,7 +307,8 @@ class _PasswordState extends State<Password> {
                       _isChecked == true
                           ? Icons.visibility_rounded
                           : Icons.visibility_off_rounded,
-                      key: ValueKey<bool>(_isChecked)),
+                      key: ValueKey<bool>(_isChecked),
+                      size: 20),
                 ))),
         onTapOutside: (event) =>
             FocusScope.of(context).requestFocus(FocusNode()));
