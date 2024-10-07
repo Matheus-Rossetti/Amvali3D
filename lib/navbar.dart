@@ -25,8 +25,7 @@ class _NavBarState extends State<NavBar> {
       destinations: [
         NavigationDestination(
             icon: Icon(Icons.auto_awesome_mosaic), label: 'Projetos'),
-        NavigationDestination(icon: Icon(Icons.abc), label: 'teste'),
-        NavigationDestination(icon: Icon(Icons.abc), label: 'teste'),
+        NavigationDestination(icon: Icon(Icons.abc), label: 'Notas'),
         NavigationDestination(icon: Icon(Icons.person), label: 'Conta'),
       ],
     );

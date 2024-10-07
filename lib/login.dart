@@ -4,8 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-import 'firebase/auth.dart';
-
 final TextEditingController emailController = TextEditingController();
 final TextEditingController passwordController = TextEditingController();
 
@@ -136,21 +134,9 @@ class Login extends StatelessWidget {
                               borderRadius: BorderRadius.circular(4)),
                           child: TextButton(
                               onPressed: () async {
-                                final message = await AuthService().login(
-                                  email: emailController.text,
-                                  password: passwordController.text,
-                                );
-                                if (message!.contains('Success')) {
-                                  Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const ProjectsScreen()));
-                                }
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(message),
-                                  ),
-                                );
+
+                                  email: emailController.text;
+                                  password: passwordController.text;
                               },
                               child: Text(
                                 "Entrar",
