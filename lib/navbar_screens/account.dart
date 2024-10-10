@@ -8,10 +8,10 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-        SizedBox(height: 100),
-        Text('Conta', style: TextStyle(fontSize: 50)),
-        SizedBox(height: 40),
-        Text('$user', style: TextStyle(fontSize: 40)),
+        const SizedBox(height: 100),
+        const Text('Conta', style: TextStyle(fontSize: 50)),
+        const SizedBox(height: 40),
+        Text(user, style: const TextStyle(fontSize: 40)),
       ]);
   }
 }

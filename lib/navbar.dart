@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -19,13 +18,13 @@ class _NavBarState extends State<NavBar> {
           currentPageIndex = index;
         });
       },
-      backgroundColor: HexColor('#dec679'),
+      backgroundColor: Colors.black,
       height: 70,
       selectedIndex: currentPageIndex,
-      destinations: [
+      destinations: const [
         NavigationDestination(
             icon: Icon(Icons.auto_awesome_mosaic), label: 'Projetos'),
-        NavigationDestination(icon: Icon(Icons.abc), label: 'Notas'),
+        NavigationDestination(icon: Icon(Icons.speaker_notes), label: 'Notas'),
         NavigationDestination(icon: Icon(Icons.person), label: 'Conta'),
       ],
     );

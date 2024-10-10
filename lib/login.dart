@@ -3,19 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 final TextEditingController emailController = TextEditingController();
 final TextEditingController passwordController = TextEditingController();
 
 class Login extends StatelessWidget {
-  Login({super.key});
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
         // deixa a status bar trasnparente
         value: const SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.transparent,
+          systemNavigationBarColor: Colors.white,
           statusBarColor: Colors.transparent,
         ),
         child: Scaffold(
@@ -63,7 +64,7 @@ class Login extends StatelessWidget {
                     child: Column(
                       children: [
                         const SizedBox(height: 10),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
@@ -106,8 +107,8 @@ class Login extends StatelessWidget {
                             decoration: BoxDecoration(
                                 color: Colors.grey[200],
                                 borderRadius: BorderRadius.circular(6)),
-                            child: Padding(
-                                padding: const EdgeInsets.fromLTRB(10, 4, 0, 0),
+                            child: const Padding(
+                                padding: EdgeInsets.fromLTRB(10, 4, 0, 0),
                                 child: Password()),
                           ),
                         ),
@@ -125,7 +126,7 @@ class Login extends StatelessWidget {
                                         fontSize: 14),
                                   ))
                             ]),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                         Container(
                           width: double.infinity,
                           height: 45,
@@ -134,11 +135,12 @@ class Login extends StatelessWidget {
                               borderRadius: BorderRadius.circular(4)),
                           child: TextButton(
                               onPressed: () async {
-
-                                  email: emailController.text;
-                                  password: passwordController.text;
+                                email:
+                                emailController.text;
+                                password:
+                                passwordController.text;
                               },
-                              child: Text(
+                              child: const Text(
                                 "Entrar",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -146,7 +148,7 @@ class Login extends StatelessWidget {
                                 ),
                               )),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           width: double.infinity,
                           height: 45,
@@ -161,7 +163,7 @@ class Login extends StatelessWidget {
                                         builder: (context) =>
                                             const ProjectsScreen()));
                               },
-                              child: Text(
+                              child: const Text(
                                 "Entrar como convidado",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -285,7 +287,7 @@ class _PasswordState extends State<Password> {
                   });
                 },
                 icon: AnimatedSwitcher(
-                  duration: Duration(milliseconds: 100),
+                  duration: const Duration(milliseconds: 100),
                   child: Icon(
                       _isChecked == true
                           ? Icons.visibility_rounded

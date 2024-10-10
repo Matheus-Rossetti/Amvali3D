@@ -17,8 +17,7 @@ class _WebViewState extends State<WebView> {
     super.initState();
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..loadRequest(Uri.parse(
-          r'https://app.speckle.systems/projects/2c12228de1/models/5b2b79388c'));
+      ..loadRequest(Uri.parse(r'http://20.201.114.134'));
   }
 
   @override
