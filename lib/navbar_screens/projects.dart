@@ -18,7 +18,7 @@ class ProjectsScreen extends StatelessWidget {
               child: GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => WebView()));
+                      MaterialPageRoute(builder: (context) => const WebView()));
                 },
                 child: Container(
                   width: double.infinity,
@@ -41,6 +41,6 @@ class ProjectsScreen extends StatelessWidget {
             ));
           }),
         ),
-        bottomNavigationBar: NavBar());
+        bottomNavigationBar: const NavBar());
   }
 }
