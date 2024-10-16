@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 final TextEditingController emailController = TextEditingController();
 final TextEditingController passwordController = TextEditingController();
