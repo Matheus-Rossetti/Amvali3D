@@ -1,4 +1,5 @@
 import 'package:amvali3dviewer/login.dart';
+import 'package:amvali3dviewer/login_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Login(),
+      home: LoginTest(),
       debugShowCheckedModeBanner: false,
       title: 'Amvali 3D Viewer',
     );
